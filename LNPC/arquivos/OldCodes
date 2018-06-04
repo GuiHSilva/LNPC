@@ -1,0 +1,165 @@
+# ScoreBoard
+
+
+	}
+	@EventHandler(priority = EventPriority.HIGHEST)
+	public void onPlayerJoin(PlayerJoinEvent event) {
+		Player player = event.getPlayer();
+		player.setGameMode(GameMode.SURVIVAL);
+
+		// Set food/health on max
+		player.setFoodLevel(20);
+		player.setHealth(player.getMaxHealth());
+
+		// Scoreboard
+		Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
+		player.setScoreboard(board);
+		_scoreboards.put(player, board);
+
+		// Objective
+		Objective obj = board.registerNewObjective(ChatColor.BOLD + "Player Data", "dummy");
+		obj.setDisplaySlot(DisplaySlot.SIDEBAR);
+		obj.setDisplayName("§6LegendMania");
+
+		// Rankings
+		board.registerNewTeam("CEO").setPrefix("§6CEO§f ");
+		board.registerNewTeam("Membro").setPrefix("§f");
+		board.registerNewTeam("mod").setPrefix("§2MOD§f ");
+		board.registerNewTeam("admin").setPrefix("§cADMIN§f ");
+
+		// agr tem q varrer todos players e atribuir os ranks
+		String rankName = "Membro"; // por padrao
+		if (player.hasPermission("legendmine.mod"))
+			rankName = "mod";
+		if (player.hasPermission("legendmine.admin"))
+			rankName = "admin";
+		if (player.hasPermission("legendmine.ceo"))
+			rankName = "CEO";
+
+		for (Player otherPlayer : Bukkit.getOnlinePlayers()) {
+			String otherRankName = "Membro";
+			if (otherPlayer.hasPermission("legendmine.mod"))
+				otherRankName = "mod";
+			if (otherPlayer.hasPermission("legendmine.admin"))
+				otherRankName = "admin";
+			if (otherPlayer.hasPermission("legendmine.ceo"))
+				otherRankName = "CEO";
+
+			board.getTeam(otherRankName).addEntry(otherPlayer.getName()); // adicioona
+																			// o
+																			// outro
+																			// player
+																			// no
+																			// scoreboard
+																			// do
+																			// player
+																			// q
+																			// entrou
+
+			otherPlayer.getScoreboard().getTeam(rankName).addEntry(player.getName()); // adiciona
+																						// o
+																						// player
+																						// q
+																						// entrou
+																						// no
+																						// scoreboard
+																						// dos
+																						// q
+																						// tao
+																						// ON
+		}
+
+	}
+
+	@Override
+	public void run() {
+		atualizarScoreBoards();
+	}
+
+	private void atualizarScoreBoards() {
+
+		for (Player player : Bukkit.getOnlinePlayers()) {
+
+			if (player == null)
+				continue;
+
+			if (!player.getScoreboard().equals(_scoreboards.get(player)))
+				player.setScoreboard(_scoreboards.get(player));
+
+			// Objective
+			Objective obj = player.getScoreboard().getObjective(DisplaySlot.SIDEBAR);
+
+			int line = 7;
+
+			// Espaço entre o titulo e a primeira msg
+			obj.getScore("  ").setScore(line--);
+
+			// Informacao
+			String rankName = "§fMembro"; // por padrao
+			if (player.hasPermission("legendmine.mod"))
+				rankName = "§2MOD";
+			if (player.hasPermission("legendmine.admin"))
+				rankName = "§cADMIN";
+			if (player.hasPermission("legendmine.ceo"))
+				rankName = "§6CEO";
+			obj.getScore("§fRank: " + rankName).setScore(line--);
+
+			// Space
+			obj.getScore("   ").setScore(line--);
+
+			// Outra info
+			obj.getScore("§fMoney:§a ").setScore(line--);
+
+			// Space
+			obj.getScore("    ").setScore(line--);
+
+			obj.getScore("§fOnlines:§a" + "/" + "   ").setScore(line--);
+
+			// Space
+			obj.getScore("      teste").setScore(line--);
+		}
+
+	}
+
+	@EventHandler
+	public void PlayerQuit(PlayerQuitEvent event) {
+		event.setQuitMessage(null); // mensagem de sair?, isso, deixa assim kkk
+
+		event.getPlayer().leaveVehicle();
+		event.getPlayer().eject();
+
+		for (Player player : Bukkit.getOnlinePlayers()) {
+			player.getScoreboard().resetScores(event.getPlayer().getName());
+			player.getScoreboard().getTeams().forEach(team -> team.removeEntry(event.getPlayer().getName()));
+			// eu fiz esse dai, ele vai percorrer e remover o player dos
+			// scoreboards etc
+		}
+		_scoreboards.remove(event.getPlayer()); // saalva e etsta
+	}
+	// Ok, so lets go
+}
+
+
+
+
+
+
+
+# Scoreboard mais simples
+
+
+
+		Player p = e.getPlayer();
+		Scoreboard score = Bukkit.getScoreboardManager().getNewScoreboard();
+		Objective objetivo = score.registerNewObjective("teste", "dummy");
+		Location loc = e.getTo();
+		objetivo.setDisplaySlot(DisplaySlot.SIDEBAR);
+		objetivo.setDisplayName("§6§lLegend§e§lMania");
+		objetivo.getScore(Bukkit.getOfflinePlayer("§aTestando")).setScore(15);
+		objetivo.getScore(Bukkit.getOfflinePlayer("§f" + ((int) p.getHealth()))).setScore(14);
+		objetivo.getScore(Bukkit.getOfflinePlayer("§aX:§e " + loc.getBlockX())).setScore(13);
+		objetivo.getScore(Bukkit.getOfflinePlayer("§aY:§e " + loc.getBlockY())).setScore(12);
+		objetivo.getScore(Bukkit.getOfflinePlayer("§aZ:§e " + loc.getBlockZ())).setScore(11);
+		p.setScoreboard(score);
+		
+	}

@@ -1,0 +1,59 @@
+name: Legend-ClickNPC
+main: me.guiihsilva.Main
+version: 4.8.4
+authors: [GuiiHSilva]
+softdepend: [PlaceholderAPI]
+commands:
+  chat:
+  limpar:
+  admin:
+  build:
+  cash:
+    aliases: [shop, compras, dinheiro]
+  teste:
+  manu:
+  bc:
+    aliases: [broadcast, say]
+  fogos:
+  home:
+  homes:
+  sethome:
+  comoconseguirchaves:
+  placa:
+  formulario:
+    aliases: [aplicar]
+  ajuda:
+  ajdr:
+    aliases: [ajudaresponder]
+  reportar:
+    aliases: [report, denunciar]
+  onlines:
+  skype:
+  daritemdrop:
+  trocarmotd:
+  recompensa:
+  fake:
+  tpaon:
+  tpaoff:
+  cabecas:
+    aliases: [cabeça, cabecas, cabeças]
+  setloja:
+    aliases: [setarloja, setlojavip, definirloja]
+  lojas:
+  ping:
+  enquete:
+  bolao:
+  fly:
+  vender:
+  pvpentreclan:
+  site:
+  sortear:
+  lag:
+  anuncio:
+  tpa:
+  tpanegar:
+  tpaceitar:
+  reiniciar:
+  chain:
+  score:
+    aliases: [scoreboard]

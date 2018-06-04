@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="arquivos"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/PaperSpigot-1.8.8-R0.1-SNAPSHOT-latest.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/lib/citizensapi-2.0.20-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/Essentials-2.x-SNAPSHOT (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/Legendchat.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/PermissionsEx-1.23.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/TitleManager-1.5.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/Vault.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/SimpleClans-2.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/worldguard-6.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/worldedit-bukkit-6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/WGRegionEvents-1.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/PlaceholderAPI.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/iConomyRecreation pre-8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/build/plugins/MVdWPlaceholderAPI.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Pichau/Documents/Minecraft/(SONHO) LegendMania/plugins/LibsDisguises.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

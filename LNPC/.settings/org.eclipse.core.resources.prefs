@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/me/guiihsilva/automsg/automsg.java=UTF-8
+encoding//src/me/guiihsilva/commands/anuncio.java=UTF-8
+encoding//src/me/guiihsilva/commands/bolao.java=UTF-8
+encoding//src/me/guiihsilva/commands/broadcast.java=UTF-8
+encoding//src/me/guiihsilva/commands/chain.java=UTF-8
+encoding//src/me/guiihsilva/commands/lccomandos.java=UTF-8
+encoding//src/me/guiihsilva/eventos/PlayerJoinListener.java=UTF-8
+encoding//src/me/guiihsilva/eventos/definirmotd.java=UTF-8
+encoding//src/me/guiihsilva/eventos/lclisteners.java=UTF-8
+encoding//src/me/guiihsilva/eventos/mercadonegro.java=UTF-8
+encoding//src/me/guiihsilva/eventos/moneypay.java=UTF-8
+encoding//src/me/guiihsilva/eventos/trocarxp.java=UTF-8
